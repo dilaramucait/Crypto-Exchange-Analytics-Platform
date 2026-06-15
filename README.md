@@ -12,7 +12,7 @@ The system is built as a modular prototype demonstrating backend development, da
 ## 🎯 Project Purpose
 The goal of this project is to:
 - Collect and store cryptocurrency market data
-- Provide structured access to historical and latest coin prices
+- Provide structured access to both historical and latest coin prices
 - Demonstrate API-based communication between frontend and backend
 - Apply software architecture concepts in a real web application
 
