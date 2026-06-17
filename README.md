@@ -113,15 +113,6 @@ http://127.0.0.1:5000
 - Full-stack web application structure
 - Data-driven system design principles
 
----
-
-## 🔮 Future Improvements
-- Add interactive charts (Chart.js / Plotly)
-- Real-time cryptocurrency price updates
-- Advanced analytics dashboard
-- User authentication system
-- Cloud deployment (AWS / Azure / Render)
-- Migration to React frontend
 
 ---
 
