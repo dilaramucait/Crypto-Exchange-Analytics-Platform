@@ -1,0 +1,15 @@
+# backend/requirements.txt
+# api_gateway dependencies
+Flask==3.1.2
+requests==2.31.0
+
+# prediction_service dependencies
+torch==2.2.0
+numpy<2
+pandas
+scikit-learn
+
+# sentiment_service dependencies
+textblob
+
+gunicorn

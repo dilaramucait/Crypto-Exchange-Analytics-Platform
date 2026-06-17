@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crypto Market Hub — Home</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="bg-main-gradient text-gray-100">
+
+<!-- NAV -->
+<nav class="nav-gradient w-full px-6 py-5 shadow-lg backdrop-blur-md border-b sticky top-0 z-30">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="{{ url_for('static', filename='logo.png') }}" height="40" />
+      <span class="text-xl font-bold">Crypto Market Hub</span>
+    </div>
+    <div class="hidden sm:flex gap-6 text-sm">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/markets" class="nav-link">Markets</a>
+      <a href="/profile" class="nav-link">Profile</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- MAIN SECTION -->
+<section class="px-6 py-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+    <!-- Left side -->
+    <div class="lg:col-span-2">
+
+      <!-- Header & filters -->
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h1 class="text-4xl font-bold">Top Coins</h1>
+          <p class="text-sm opacity-70">Live prices, mini charts and quick access to details.</p>
+        </div>
+
+        <div class="flex items-center gap-4 toolbar">
+
+          <!-- Search -->
+          <div class="relative">
+            <input id="home-search-input" type="text" placeholder="Search cryptocurrencies..."
+                   class="input-dark px-4 py-2 pr-10 rounded-xl border focus:ring-2 w-64 text-sm" />
+            <svg class="search-icon w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2"
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+
+          <!-- Limit -->
+          <select id="home-limit"
+                  class="input-dark px-3 py-2 rounded-lg border text-sm">
+            <option value="8">Top 8</option>
+            <option value="10" selected>Top 10</option>
+            <option value="20">Top 20</option>
+          </select>
+
+          <!-- Sort -->
+          <select id="sortSelect"
+                  class="input-dark px-4 py-2 pr-10 rounded-xl border focus:ring-2 w-64 text-sm">
+            <option value="close" selected>Close </option>
+            <option value="market_cap">Market Cap</option>
+            <option value="volume">Volume</option>
+            <option value="percent_change_24h">% Change 24h</option>
+            <option value="symbol">Symbol (A–Z)</option>
+          </select>
+
+        </div>
+      </div>
+
+      <!-- Gainers / Losers -->
+      <div class="flex gap-4 mb-6">
+
+        <div id="gainers" class="soft-card stat-card rounded-2xl p-6 flex-1 min-w-[300px]">
+          <h4 class="font-semibold mb-2">Top Gainers (24h)</h4>
+          <div id="gainers-list" class="space-y-2"></div>
+        </div>
+
+        <div id="losers" class="soft-card stat-card rounded-2xl p-6 flex-1 min-w-[300px]">
+          <h4 class="font-semibold mb-2">Top Losers (24h)</h4>
+          <div id="losers-list" class="space-y-2"></div>
+        </div>
+
+      </div>
+
+      <!-- Coins grid -->
+      <div id="home-markets-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+
+    </div>
+
+    <!-- Right side -->
+    <aside class="space-y-6">
+
+      <!-- Watchlist -->
+      <div class="soft-card stat-card rounded-2xl p-6">
+        <h3 class="text-lg font-bold mb-3">Watchlist</h3>
+        <div id="watchlist-items" class="space-y-3">
+          <p class="opacity-60 text-sm">No coins in watchlist yet.</p>
+        </div>
+        <div class="mt-4">
+          <button id="clear-watchlist" class="btn-outline px-3 py-2 text-sm">Clear watchlist</button>
+        </div>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="soft-card stat-card rounded-2xl p-6">
+        <h3 class="text-lg font-bold mb-3">Quick Stats</h3>
+        <div id="quick-stats" class="text-sm opacity-80">
+          <p>Loading...</p>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+
+<!-- Tooltip -->
+<div id="spark-tooltip"
+     class="hidden fixed pointer-events-none z-[9999] px-2 py-1 rounded-md text-xs"></div>
+
+<!-- Footer -->
+<footer class="nav-gradient w-full px-6 py-10 border-t">
+  <div class="max-w-7xl mx-auto text-center">
+    <p class="opacity-60 text-sm font-medium">© Crypto Market Hub — Prototype</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='home.js') }}"></script>
+
+</body>
+</html>

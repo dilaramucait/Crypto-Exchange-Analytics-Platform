@@ -1,0 +1,286 @@
+/* ===========================
+   GLOBAL BACKGROUND GRADIENT
+   =========================== */
+body {
+  background: linear-gradient(135deg, #070F2B 0%, #535C91 100%);
+}
+
+/* ===========================
+   NAVBAR GRADIENT
+   =========================== */
+nav {
+  background: linear-gradient(135deg, #070F2B 0%, #535C91 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===========================
+   LOGO IMAGE
+   =========================== */
+nav img {
+  height: 50px;
+  width: auto;
+}
+
+/* ===========================
+   SEARCH INPUT
+   =========================== */
+#search-input {
+  background-color: #070F2B !important;
+  color: white;
+}
+
+/* ===========================
+   PAGE SECTION BACKGROUND
+   =========================== */
+.section-gradient {
+  background: linear-gradient(135deg, #070F2B 0%, #1B1A55 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===========================
+   SELECT DROPDOWN
+   =========================== */
+#sort-column {
+  background-color: #070F2B !important;
+  color: white !important;
+}
+
+/* ===========================
+   ASC/DESC BUTTON
+   =========================== */
+#sort-direction {
+  background-color: #070F2B !important;
+  color: white;
+}
+
+/* ===========================
+   FOOTER GRADIENT
+   =========================== */
+footer {
+  background: linear-gradient(135deg, #070F2B 0%, #535C91 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ===========================================================
+   GLOBAL STYLES
+   =========================================================== */
+
+body {
+  background: linear-gradient(135deg, #070F2B 0%, #535C91 100%);
+  color: #fff;
+}
+
+/* Make all cards use your theme background */
+.theme-card {
+  background-color: #070F2B !important;
+  border: 1px solid #2c2f50 !important;
+}
+
+/* Reusable gradient background */
+.bg-main-gradient {
+  background: linear-gradient(135deg, #070F2B 0%, #535C91 100%);
+}
+
+/* Navbar gradient styling */
+.nav-gradient {
+  background: linear-gradient(135deg, #070F2B 0%, #535C91 100%) !important;
+}
+
+/* Inputs + Selects background override */
+.input-dark {
+  background-color: #070F2B !important;
+  border-color: #2c2f50 !important;
+  color: #fff !important;
+}
+
+.input-dark::placeholder {
+  color: #9aa0c2;
+}
+
+/* Search icon color fix */
+.search-icon {
+  opacity: 0.4;
+}
+
+/* Cards with soft glow */
+.soft-card {
+  background-color: #070F2B !important;
+  border: 1px solid #2c2f50 !important;
+  border-radius: 16px;
+}
+
+/* Buttons */
+.btn-outline {
+  border: 1px solid #2c2f50;
+  color: white;
+  background-color: #070F2B;
+  border-radius: 10px;
+}
+
+.btn-outline:hover {
+  background-color: #0d1542;
+}
+
+/* Watchlist specific styling */
+#watchlist-items p {
+  color: #b9c0e0;
+}
+
+/* Tooltip */
+#spark-tooltip {
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+/* Navigation links */
+.nav-link {
+  color: #d7dcf8;
+  transition: 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.65;
+}
+
+/* Footer */
+footer {
+  color: #c7cbea;
+}
+
+
+
+/* ========== Base ========== */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* { box-sizing: border-box; }
+
+/* gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #070F2B 0%, #1B1A55 100%);
+}
+
+/* crypto card */
+.crypto-card {
+  transition: all 0.28s cubic-bezier(.4,0,.2,1);
+  border: 1px solid rgba(146,144,195,0.08);
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96));
+  border-radius: 12px;
+  padding: 16px;
+  background-color:#070F2B;
+}
+.dark .crypto-card { background-color:#070F2B}
+
+/* Hover */
+.crypto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-color: rgba(146,144,195,0.18);
+}
+
+/* symbol */
+.crypto-symbol {
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:20px;
+  background: linear-gradient(135deg,#535C91,#9290C3);
+  box-shadow: 0 4px 12px rgba(146,144,195,0.25);
+}
+
+/* stat card */
+.stat-card {
+  background-color:#070F2B;
+  /*background: rgba(146,144,195,0.03);*/
+  border: 1px solid rgba(146,144,195,0.06);
+  border-radius: 16px;
+  padding: 20px;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(146,144,195,0.12);
+}
+
+/* price badges */
+.price-positive {
+  color: #10b981;
+  background: rgba(16,185,129,0.08);
+  padding: 4px 10px;border-radius:8px;font-weight:600;
+}
+.price-negative {
+  color: #ef4444;
+  background: rgba(239,68,68,0.06);
+  padding: 4px 10px;border-radius:8px;font-weight:600;
+}
+
+/* small helpers */
+.nav-link { position: relative; font-weight:500; }
+.nav-link::after { content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:#9290C3; transition:width .25s; }
+.nav-link:hover::after { width:100%; }
+
+/* chart container */
+.chart-container {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(146,144,195,0.08);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+/* sparkline canvas */
+.sparkline { width:100%; height:56px; display:block; }
+
+/* tooltip */
+#spark-tooltip { transition: transform .06s ease, opacity .12s; transform-origin:left top; opacity:0.98; }
+
+/* flash animations */
+@keyframes flash-up { 0%{box-shadow:0 0 0 0 rgba(16,185,129,0);transform:translateY(0);}30%{box-shadow:0 16px 30px rgba(16,185,129,0.12);transform:translateY(-4px);}100%{box-shadow:0 0 0 0 rgba(16,185,129,0);transform:translateY(0);} }
+@keyframes flash-down { 0%{box-shadow:0 0 0 0 rgba(239,68,68,0);transform:translateY(0);}30%{box-shadow:0 16px 30px rgba(239,68,68,0.12);transform:translateY(-4px);}100%{box-shadow:0 0 0 0 rgba(239,68,68,0);transform:translateY(0);} }
+
+/* Top 10 highlight */
+.top10 { background: rgba(0,0,0,0.06); }
+.dark .top10 { background: rgba(255,255,255,0.04); }
+.top10:hover { box-shadow: 0 0 18px rgba(0,0,0,0.12); }
+
+/* responsive tweaks */
+@media (max-width:640px) {
+  .crypto-card { padding:12px; }
+  .sparkline { height:44px; }
+}
+
+.crypto-card {
+  background-color:#070F2B;
+  transition: all 0.28s cubic-bezier(.4,0,.2,1);
+  border: 1px solid rgba(146,144,195,0.10);
+  backdrop-filter: blur(10px);
+  background: rgba(146,144,195,0.06);   /* darker, same as stat cards */
+  border-radius: 14px;
+  padding: 16px;
+  background: rgba(146,144,195,0.03);
+  border: 1px solid rgba(146,144,195,0.06);
+}
+
+.dark .crypto-card {
+  background: rgba(255,255,255,0.04);   /* dark mode tone */
+}
+
+.chart-container-price {
+  height: 310px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(146,144,195,0.08);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+
+

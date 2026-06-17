@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ symbol }} — On-Chain Analysis</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.1"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Symbol -->
+  <script>
+    const SYMBOL = "{{ symbol }}";
+  </script>
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+
+<!-- NAVBAR -->
+<nav class="w-full px-6 py-4 bg-gradient-to-r from-indigo-900 to-blue-900 shadow-lg sticky top-0 z-30">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="text-xl font-bold">Crypto Market Hub</div>
+    <div class="flex gap-6 text-sm">
+      <a href="/" class="hover:opacity-80">Home</a>
+      <a href="/markets" class="hover:opacity-80">Markets</a>
+      <a href="/profile" class="hover:opacity-80">Profile</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+  <!-- TITLE -->
+  <section>
+    <h1 class="text-3xl font-bold">{{ symbol }} On-Chain Analysis</h1>
+    <p class="opacity-70">
+      Price action, on-chain metrics, sentiment, and combined signal.
+    </p>
+  </section>
+
+  <!-- PRICE CHART -->
+  <section class="bg-slate-800/60 rounded-xl p-4 shadow">
+    <h2 class="text-lg font-semibold mb-3">Price History</h2>
+    <canvas id="price-chart" height="120"></canvas>
+  </section>
+
+  <!-- ON-CHAIN METRICS -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">Active Addresses</h3>
+      <canvas id="active-addresses-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">Transactions</h3>
+      <canvas id="transactions-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">Exchange Inflow</h3>
+      <canvas id="exchange-inflow-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">Exchange Outflow</h3>
+      <canvas id="exchange-outflow-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">Whale Transactions</h3>
+      <canvas id="whale-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">Hash Rate</h3>
+      <canvas id="hashrate-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">Total Value Locked (TVL)</h3>
+      <canvas id="tvl-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">NVT Ratio</h3>
+      <canvas id="nvt-chart" height="120"></canvas>
+    </div>
+
+    <div class="bg-slate-800/60 rounded-xl p-4 shadow">
+      <h3 class="text-sm font-semibold mb-2">MVRV</h3>
+      <canvas id="mvrv-chart" height="120"></canvas>
+    </div>
+
+  </section>
+
+  <!-- MARKET SENTIMENT -->
+  <section class="bg-slate-800/60 rounded-xl p-6 shadow">
+    <h2 class="text-xl font-semibold mb-1">Market Sentiment</h2>
+    <p class="text-sm opacity-70 mb-4">
+      Sentiment derived from cryptocurrency-related news using NLP analysis.
+    </p>
+    <div id="sentiment-box" class="inline-block px-4 py-2 rounded-lg bg-slate-700 text-sm">
+      Loading sentiment...
+    </div>
+  </section>
+
+  <!-- RECENT NEWS -->
+  <section class="bg-slate-800/60 rounded-xl p-6 shadow">
+    <h2 class="text-xl font-semibold mb-4">Recent News Sentiment</h2>
+    <div id="news-box" class="space-y-3 text-sm opacity-90">
+      Loading news...
+    </div>
+  </section>
+
+  <!-- COMBINED SIGNAL -->
+  <section class="bg-slate-800/60 rounded-xl p-6 shadow">
+    <h2 class="text-xl font-semibold mb-4">Combined Market Signal</h2>
+    <div id="signal-box" class="text-center text-xl font-bold px-6 py-4 rounded-xl bg-slate-700">
+      Calculating signal...
+    </div>
+  </section>
+
+</main>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='on-chain.js') }}"></script>
+
+</body>
+</html>

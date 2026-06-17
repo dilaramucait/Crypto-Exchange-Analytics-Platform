@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Markets — Crypto Market Hub</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="site-bg text-gray-100">
+
+<!-- NAV -->
+<nav class="nav-gradient w-full px-6 py-5 shadow-lg backdrop-blur-md border-b sticky top-0 z-30">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="/static/logo.png" height="40"/>
+      <span class="text-xl font-bold">Crypto Market Hub</span>
+    </div>
+    <div class="hidden sm:flex gap-6 text-sm">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/markets" class="nav-link">Markets</a>
+      <a href="/profile" class="nav-link">Profile</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section-gradient px-6 py-16">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="flex flex-wrap gap-4 justify-between items-center mb-10">
+      <h2 class="text-4xl font-bold tracking-tight">All Cryptocurrencies</h2>
+
+      <input
+        type="text"
+        id="market-search"
+        placeholder="Search by symbol..."
+        class="px-4 py-2 rounded-xl border shadow-sm text-sm w-64
+               bg-white dark:bg-gray-800 placeholder:text-gray-400"
+      />
+
+      <div class="flex items-center gap-3">
+        <select id="sort-column"
+          class="px-4 py-2 rounded-xl border shadow-sm text-sm bg-white dark:bg-gray-800">
+          <option value="symbol">Symbol</option>
+          <option value="date">Date</option>
+          <option value="open">Open</option>
+          <option value="high">High</option>
+          <option value="low">Low</option>
+          <option value="close">Close</option>
+          <option value="volume">Volume</option>
+          <option value="market_cap">Market Cap</option>
+        </select>
+
+        <button id="sort-direction"
+          class="flex items-center gap-2 px-4 py-2 border rounded-xl text-sm">
+          Sort <span id="sort-emoji">⬇️</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+      <!-- MARKETS -->
+      <div id="markets-grid"
+           class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+      </div>
+
+      <!-- WATCHLIST -->
+      <aside class="sticky top-28 h-fit
+              rounded-2xl p-5 bg-white dark:bg-gray-800
+              border border-gray-200 dark:border-gray-700 shadow-lg">
+
+
+        <h3 class="text-lg font-semibold mb-4">Watchlist</h3>
+
+        <div id="markets-watchlist" class="space-y-3"></div>
+
+        <p id="markets-watchlist-empty"
+           class="text-sm opacity-60 hidden">
+          No coins in watchlist yet.
+        </p>
+
+        <button id="clear-watchlist" class="px-3 py-1.5 border rounded-lg">
+          Clear All
+        </button>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer-gradient w-full px-6 py-10 border-t">
+  <div class="max-w-7xl mx-auto text-center">
+    <p class="opacity-60 text-sm">© Crypto Market Hub</p>
+  </div>
+</footer>
+
+<script src="/static/markets.js"></script>
+</body>
+</html>

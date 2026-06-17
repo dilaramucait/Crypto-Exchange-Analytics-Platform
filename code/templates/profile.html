@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Profile — Crypto Market Hub</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+<!-- NAV -->
+<nav class="nav-gradient w-full px-6 py-5 shadow-lg backdrop-blur-md border-b sticky top-0 z-30">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="{{ url_for('static', filename='logo.png') }}" height="40" />
+      <span class="text-xl font-bold">Crypto Market Hub</span>
+    </div>
+    <div class="hidden sm:flex gap-6 text-sm">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/markets" class="nav-link">Markets</a>
+      <a href="/profile" class="nav-link">Profile</a>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-4xl mx-auto p-5 mt-6">
+
+  <h1 class="text-3xl font-bold mb-6">Your Profile</h1>
+
+  <!-- USER HEADER -->
+  <div class="flex items-center gap-4 mb-8">
+    <div class="w-16 h-16 rounded-full bg-indigo-600 text-white flex items-center justify-center text-2xl font-bold" id="user-avatar">
+      U
+    </div>
+    <div>
+      <h1 class="text-3xl font-bold" id="profile-username">DemoUser</h1>
+      <p class="text-gray-500 dark:text-gray-400 text-sm">
+        Member since <span id="profile-member-since">2023-01-15</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- USER INFO CARD -->
+  <div class="rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg p-6 mb-6">
+    <h2 class="text-xl font-semibold mb-4">Account Information</h2>
+    <div id="user-info" class="space-y-3">
+      <div><strong>Username:</strong> <span id="username">Loading...</span></div>
+      <div><strong>Email:</strong> <span id="email">Loading...</span></div>
+      <div><strong>Member Since:</strong> <span id="created">Loading...</span></div>
+      <div><strong>Last Login:</strong> <span id="last-login">Loading...</span></div>
+    </div>
+  </div>
+
+  <!-- PREFERENCES -->
+  <div class="rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Preferences</h2>
+    <div class="space-y-3">
+      <div><strong>Theme:</strong> <span id="pref-theme">Loading...</span></div>
+      <div><strong>Currency:</strong> <span id="pref-currency">Loading...</span></div>
+      <div><strong>Items Per Page:</strong> <span id="pref-items">Loading...</span></div>
+      <div><strong>Watchlist Items:</strong> <span id="watchlist-count">0</span></div>
+    </div>
+  </div>
+
+  <!-- CRYPTO OVERVIEW -->
+  <div class="rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Crypto Overview</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div class="p-5 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 border text-center">
+        <div class="text-3xl font-bold text-indigo-600 dark:text-indigo-300" id="stat-watchlist">0</div>
+        <div class="text-sm opacity-70">Coins in Watchlist</div>
+      </div>
+      <div class="p-5 rounded-xl bg-green-50 dark:bg-green-900/20 border text-center">
+        <div class="text-3xl font-bold text-green-600 dark:text-green-300" id="stat-portfolio">$0</div>
+        <div class="text-sm opacity-70">Portfolio Value</div>
+      </div>
+      <div class="p-5 rounded-xl bg-yellow-50 dark:bg-yellow-900/20 border text-center">
+        <div class="text-3xl font-bold text-yellow-600 dark:text-yellow-300" id="stat-recent">0</div>
+        <div class="text-sm opacity-70">Recently Viewed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP WATCHED COINS -->
+  <div class="rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Top Watched Coins</h2>
+    <div id="watched-coins" class="grid sm:grid-cols-2 gap-6"></div>
+    <p id="no-watched" class="opacity-70 hidden">No coins in your watchlist yet.</p>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg p-6">
+    <h2 class="text-xl font-semibold mb-4">Actions</h2>
+    <div class="flex flex-col gap-3">
+      <button id="edit-profile" class="px-4 py-2 rounded-lg bg-blue-600 text-white shadow">Edit Profile</button>
+      <button id="delete-account" class="px-4 py-2 rounded-lg bg-red-600 text-white shadow">Delete Account</button>
+      <a href="/logout" class="px-4 py-2 rounded-lg bg-gray-700 text-white shadow text-center">Log Out</a>
+    </div>
+  </div>
+
+</main>
+
+<script src="{{ url_for('static', filename='profile.js') }}"></script>
+</body>
+</html>

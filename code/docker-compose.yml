@@ -1,0 +1,12 @@
+
+services:
+  crypto-dashboard:
+    build: .
+    container_name: crypto-dashboard
+    ports:
+      - "80:80"
+      - "5001:5001"
+      - "5002:5002"
+      - "5003:5003"
+    restart: unless-stopped
+
