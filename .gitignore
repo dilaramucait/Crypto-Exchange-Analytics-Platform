@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database (IMPORTANT: decide based on submission)
+*.db
+
+# Jupyter (if used later)
+.ipynb_checkpoints/
+
+# Node (only if you add frontend tooling later)
+node_modules/
