@@ -1,120 +1,117 @@
-# 📊 Crypto Exchange Analytics Platform
+# 📊 Crypto Exchange Analytics Platform (Homework 4)
 
 ## 📌 Overview
-This project is a full-stack web application developed as part of the **Software Design and Architecture course**.
+This project is a **cryptocurrency analytics platform** developed as part of the **Software Design and Architecture course (Homework 4)**.
 
-It analyzes cryptocurrency market data using historical datasets from major exchanges and provides a simple web interface with API endpoints for accessing and processing coin data.
+It is a **full-stack, microservices-based system** that provides:
+- Market data visualization  
+- Historical cryptocurrency prices  
+- Sentiment analysis  
+- On-chain metrics (simulated)  
+- LSTM-based next-day price prediction  
 
-The system is built as a modular prototype demonstrating backend development, data handling, and basic frontend integration.
+The system demonstrates **modular architecture, API design, and containerized deployment using Docker**.
 
 ---
 
-## 🎯 Project Purpose
-The goal of this project is to:
-- Collect and store cryptocurrency market data
-- Provide structured access to both historical and latest coin prices
-- Demonstrate API-based communication between frontend and backend
-- Apply software architecture concepts in a real web application
+## 🎯 Project Goals
+- Collect and process cryptocurrency market data  
+- Provide structured access to historical and latest prices  
+- Implement microservices-based system design  
+- Integrate machine learning for price prediction  
+- Demonstrate API-driven frontend-backend communication  
+- Apply software architecture principles in a real system  
 
 ---
 
 ## 🏗️ Architecture
-The system follows a layered architecture:
 
-- Frontend Layer → HTML pages for user interaction  
-- Backend Layer → Flask REST API  
-- Data Layer → SQLite database (`data_1000_coins_10_year.db`)  
-- API Layer → Endpoints for data retrieval and processing  
+The system follows a **microservices architecture**:
+
+- **Frontend / API Gateway** → Main entry point (Flask web UI + aggregation layer)  
+- **Market Service** → Provides coin prices and historical OHLCV data  
+- **Prediction Service** → LSTM model for next-day price prediction  
+- **Sentiment Service** → News + sentiment analysis  
+- **Data Layer** → SQLite database (historical crypto data)  
+
+### Design Patterns Used
+- **Facade Pattern** → API Gateway simplifies access to all services  
+- **Adapter Pattern** → Normalizes responses between services  
+
+---
+
+## 🧩 Features
+
+### 📈 Market Data
+- Latest cryptocurrency prices
+- 24h price changes
+- Historical OHLCV data
+
+### 🤖 Machine Learning
+- LSTM-based next-day closing price prediction
+
+### 🧠 Sentiment Analysis
+- News-based sentiment scoring
+- Combined sentiment signals per coin
+
+### ⛓️ On-Chain Metrics (Simulated)
+- Active addresses
+- Transaction volume
+- Whale activity
+- TVL, NVT, MVRV indicators
+
+### 🧱 System Design
+- Microservices architecture
+- REST API communication
+- Modular and scalable structure
 
 ---
 
 ## 📡 API Endpoints
 
-### Get latest coin prices
-GET /api/coins
+### Market Service
+- `GET /api/coins` → Latest coin prices  
+- `GET /api/coins/<symbol>` → Historical data  
+- `GET /api/coins_with_change` → 24h change data  
+- `GET /api/onchain/<symbol>` → On-chain metrics  
 
-Returns the latest available price for all cryptocurrencies stored in the database.
+### Prediction Service
+- `GET /api/lstm/<symbol>` → Next-day price prediction  
 
----
-
-### Get historical data for a specific coin
-GET /api/coins/<SYMBOL>
-
-Example:
-GET /api/coins/BTC
-
-Returns full historical data (OHLCV and market metrics) for the selected cryptocurrency.
-
----
-
-## 🧩 Features
-- Flask backend server
-- REST API implementation
-- SQLite database integration
-- Historical cryptocurrency data storage (10+ years)
-- Latest price extraction per symbol
-- Multi-page HTML frontend
-- Modular and layered system design
+### Sentiment Service
+- `GET /api/sentiment/<symbol>` → Sentiment score  
+- `GET /api/news/<symbol>` → News data  
+- `GET /api/combined-signal/<symbol>` → Combined signal  
 
 ---
 
 ## 🛠️ Technologies Used
-- Python
-- Flask
-- SQLite
-- HTML
-- CSS
-- JavaScript
 
----
-
-## 📂 Project Structure
-project/
-│── app.py
-│── data_1000_coins_10_year.db
-│── templates/
-│   ├── index.html
-│   ├── coins.html
-│── static/
-│   ├── style.css
-│   ├── script.js
-│── requirements.txt
-│── README.md
-
----
-
-## ▶️ How to Run
-
-### 1. Clone the repository
-git clone https://github.com/your-username/crypto-analytics-platform.git  
-cd crypto-analytics-platform  
-
----
-
-### 2. Install dependencies
-pip install flask  
-
----
-
-### 3. Run the application
-python app.py  
-
----
-
-### 4. Open in browser
-http://127.0.0.1:5000  
+- Python  
+- Flask  
+- SQLite  
+- PyTorch (LSTM model)  
+- NumPy / Pandas  
+- Scikit-learn  
+- Docker & Docker Compose  
+- HTML / CSS / JavaScript  
 
 ---
 
 ## 📊 What This Project Demonstrates
-- REST API design and development
-- Backend engineering using Flask
-- Database integration with SQLite
-- Full-stack web application structure
-- Data-driven system design principles
 
+-Microservices architecture design
+-REST API development
+-Machine learning integration (LSTM)
+-Sentiment analysis pipeline
+-Full-stack web development
+-Docker-based deployment
 
 ---
 
-## ⚠️ Note
-This project was developed as part of the Software Design and Architecture course, following homework requirements for building a full-stack system with structured data processing, API design, and web integration.
+## ⚠️ Notes / Limitations
+
+-On-chain metrics are simulated (not real blockchain data)
+-LSTM model is simplified for educational purposes
+-Project is intended for academic demonstration
+
